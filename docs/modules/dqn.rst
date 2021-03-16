@@ -56,11 +56,10 @@ Example
   import numpy as np
 
   from stable_baselines3 import DQN
-  from stable_baselines3.dqn import MlpPolicy
 
-  env = gym.make('Pendulum-v0')
+  env = gym.make("CartPole-v0")
 
-  model = DQN(MlpPolicy, env, verbose=1)
+  model = DQN("MlpPolicy", env, verbose=1)
   model.learn(total_timesteps=10000, log_interval=4)
   model.save("dqn_pendulum")
 
@@ -101,7 +100,7 @@ Run the benchmark (replace ``$ENV_ID`` by the env id, for instance ``BreakoutNoF
 
 .. code-block:: bash
 
-  python train.py --algo a2c --env $ENV_ID --eval-episodes 10 --eval-freq 10000
+  python train.py --algo dqn --env $ENV_ID --eval-episodes 10 --eval-freq 10000
 
 
 Plot the results:
